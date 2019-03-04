@@ -15,16 +15,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"internal/testenv"
 	"io"
 	"io/ioutil"
 	"log"
 	"math/rand"
 	"net"
-	. "net/http"
-	"net/http/httptest"
-	"net/http/httputil"
-	"net/http/internal"
 	"net/url"
 	"os"
 	"os/exec"
@@ -39,6 +34,13 @@ import (
 	"syscall"
 	"testing"
 	"time"
+
+	. "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/httptest"
+	"github.com/hieunmce/http-dev/httputil"
+
+	"github.com/hieunmce/http-dev/internal"
+	"github.com/hieunmce/http-dev/internal/testenv"
 )
 
 type dummyAddr string

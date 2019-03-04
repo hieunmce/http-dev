@@ -6,7 +6,7 @@ package http
 
 import (
 	"io"
-	"net/http/httptrace"
+	"github.com/hieunmce/http-dev/httptrace"
 	"net/textproto"
 	"sort"
 	"strings"

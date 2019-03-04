@@ -17,9 +17,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	. "net/http"
-	"net/http/cookiejar"
-	"net/http/httptest"
 	"net/url"
 	"reflect"
 	"strconv"
@@ -28,6 +25,10 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	. "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/cookiejar"
+	"github.com/hieunmce/http-dev/httptest"
 )
 
 var robotsTxtHandler = HandlerFunc(func(w ResponseWriter, r *Request) {

@@ -32,7 +32,7 @@ import (
 	"math"
 	mathrand "math/rand"
 	"net"
-	"net/http/httptrace"
+	"github.com/hieunmce/http-dev/httptrace"
 	"net/textproto"
 	"net/url"
 	"os"
@@ -44,9 +44,9 @@ import (
 	"sync"
 	"time"
 
-	"internal/x/net/http/httpguts"
-	"internal/x/net/http2/hpack"
-	"internal/x/net/idna"
+	"golang.org/x/net/http/httpguts"
+	"golang.org/x/net/http2/hpack"
+	"golang.org/x/net/idna"
 )
 
 // A list of the possible cipher suite ids. Taken from

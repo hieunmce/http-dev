@@ -11,7 +11,7 @@ import (
 	"crypto/tls"
 	"io"
 	"io/ioutil"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"strings"
 )
 

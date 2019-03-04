@@ -15,7 +15,7 @@ import (
 	"io"
 	"io/ioutil"
 	"net"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"net/url"
 	"os"
 	"strconv"

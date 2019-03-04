@@ -6,7 +6,7 @@ package http_test
 
 import (
 	"log"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"os"
 	"strings"
 )

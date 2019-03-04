@@ -7,8 +7,8 @@ package pprof
 import (
 	"bytes"
 	"io/ioutil"
-	"net/http"
-	"net/http/httptest"
+	http "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/httptest"
 	"runtime/pprof"
 	"testing"
 )

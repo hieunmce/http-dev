@@ -14,8 +14,6 @@ import (
 	"mime"
 	"mime/multipart"
 	"net"
-	. "net/http"
-	"net/http/httptest"
 	"net/url"
 	"os"
 	"os/exec"
@@ -27,6 +25,9 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	. "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/httptest"
 )
 
 const (

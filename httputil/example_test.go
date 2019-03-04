@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
-	"net/http/httptest"
-	"net/http/httputil"
+	http "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/httptest"
+	"github.com/hieunmce/http-dev/httputil"
 	"net/url"
 	"strings"
 )

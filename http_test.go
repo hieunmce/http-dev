@@ -8,11 +8,12 @@ package http
 
 import (
 	"bytes"
-	"internal/testenv"
 	"os/exec"
 	"reflect"
 	"testing"
 	"time"
+
+	"github.com/hieunmce/http-dev/internal/testenv"
 )
 
 func init() {

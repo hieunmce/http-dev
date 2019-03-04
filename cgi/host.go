@@ -20,7 +20,7 @@ import (
 	"io"
 	"log"
 	"net"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"os"
 	"os/exec"
 	"path/filepath"

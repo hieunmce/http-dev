@@ -9,8 +9,9 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
-	"net/http"
-	"net/http/httptest"
+
+	http "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/httptest"
 )
 
 func ExampleResponseRecorder() {

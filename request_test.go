@@ -13,13 +13,14 @@ import (
 	"io"
 	"io/ioutil"
 	"mime/multipart"
-	. "net/http"
 	"net/url"
 	"os"
 	"reflect"
 	"regexp"
 	"strings"
 	"testing"
+
+	. "github.com/hieunmce/http-dev"
 )
 
 func TestQuery(t *testing.T) {

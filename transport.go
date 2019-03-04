@@ -20,7 +20,7 @@ import (
 	"io"
 	"log"
 	"net"
-	"net/http/httptrace"
+	"github.com/hieunmce/http-dev/httptrace"
 	"net/textproto"
 	"net/url"
 	"os"
@@ -30,8 +30,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"internal/x/net/http/httpguts"
-	"internal/x/net/http/httpproxy"
+	"golang.org/x/net/http/httpguts"
+	"golang.org/x/net/http/httpproxy"
 )
 
 // DefaultTransport is the default implementation of Transport and is

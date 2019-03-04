@@ -6,10 +6,11 @@ package http
 
 import (
 	"bytes"
-	"internal/race"
 	"runtime"
 	"testing"
 	"time"
+
+	"github.com/hieunmce/http-dev/internal/race"
 )
 
 var headerWriteTests = []struct {

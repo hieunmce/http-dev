@@ -8,11 +8,11 @@ import (
 	"bytes"
 	"fmt"
 	"io/ioutil"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"strconv"
 	"strings"
 
-	"internal/x/net/http/httpguts"
+	"golang.org/x/net/http/httpguts"
 )
 
 // ResponseRecorder is an implementation of http.ResponseWriter that

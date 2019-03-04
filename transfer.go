@@ -11,8 +11,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"net/http/httptrace"
-	"net/http/internal"
+	"github.com/hieunmce/http-dev/httptrace"
 	"net/textproto"
 	"reflect"
 	"sort"
@@ -21,7 +20,8 @@ import (
 	"sync"
 	"time"
 
-	"internal/x/net/http/httpguts"
+	"github.com/hieunmce/http-dev/internal"
+	"golang.org/x/net/http/httpguts"
 )
 
 // ErrLineTooLong is returned when reading request or response bodies

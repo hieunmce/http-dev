@@ -12,10 +12,11 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	. "net/http"
-	"net/http/httptest"
 	"strings"
 	"testing"
+
+	. "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/httptest"
 )
 
 func TestNextProtoUpgrade(t *testing.T) {

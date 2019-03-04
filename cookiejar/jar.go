@@ -9,7 +9,7 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"net/url"
 	"sort"
 	"strings"

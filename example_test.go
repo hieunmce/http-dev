@@ -10,7 +10,7 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"os"
 	"os/signal"
 )

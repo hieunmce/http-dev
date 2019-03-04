@@ -9,7 +9,7 @@ import (
 	"errors"
 	"io"
 	"io/ioutil"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"testing"
 )
 

@@ -19,14 +19,14 @@ import (
 	"mime"
 	"mime/multipart"
 	"net"
-	"net/http/httptrace"
+	"github.com/hieunmce/http-dev/httptrace"
 	"net/textproto"
 	"net/url"
 	"strconv"
 	"strings"
 	"sync"
 
-	"internal/x/net/idna"
+	"golang.org/x/net/idna"
 )
 
 const (

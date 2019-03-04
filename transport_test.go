@@ -20,16 +20,10 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"internal/nettrace"
 	"io"
 	"io/ioutil"
 	"log"
 	"net"
-	. "net/http"
-	"net/http/httptest"
-	"net/http/httptrace"
-	"net/http/httputil"
-	"net/http/internal"
 	"net/textproto"
 	"net/url"
 	"os"
@@ -42,7 +36,14 @@ import (
 	"testing"
 	"time"
 
-	"internal/x/net/http/httpguts"
+	. "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/httptest"
+	"github.com/hieunmce/http-dev/httptrace"
+	"github.com/hieunmce/http-dev/httputil"
+
+	"github.com/hieunmce/http-dev/internal"
+	"github.com/hieunmce/http-dev/internal/nettrace"
+	"golang.org/x/net/http/httpguts"
 )
 
 // TODO: test 5 pipelined requests with responses: 1) OK, 2) OK, Connection: Close

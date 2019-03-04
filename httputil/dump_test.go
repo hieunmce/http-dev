@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"net/http"
+	http "github.com/hieunmce/http-dev"
 	"net/url"
 	"runtime"
 	"strings"
