@@ -14,13 +14,11 @@ import (
 	"compress/gzip"
 	"container/list"
 	"context"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"io"
 	"log"
 	"net"
-	"github.com/hieunmce/http-dev/httptrace"
 	"net/textproto"
 	"net/url"
 	"os"
@@ -29,6 +27,9 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/hieunmce/http-dev/httptrace"
+	tls "github.com/hieunmce/tls-dev"
 
 	"golang.org/x/net/http/httpguts"
 	"golang.org/x/net/http/httpproxy"

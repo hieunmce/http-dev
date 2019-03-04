@@ -9,15 +9,16 @@ package http
 import (
 	"bufio"
 	"bytes"
-	"crypto/tls"
 	"errors"
 	"fmt"
-	"golang.org/x/net/http/httpguts"
 	"io"
 	"net/textproto"
 	"net/url"
 	"strconv"
 	"strings"
+
+	tls "github.com/hieunmce/tls-dev"
+	"golang.org/x/net/http/httpguts"
 )
 
 var respExcludeHeader = map[string]bool{

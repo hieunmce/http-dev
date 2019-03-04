@@ -10,7 +10,6 @@ import (
 	"bufio"
 	"bytes"
 	"context"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"io"
@@ -29,6 +28,7 @@ import (
 	"sync/atomic"
 	"time"
 
+	tls "github.com/hieunmce/tls-dev"
 	"golang.org/x/net/http/httpguts"
 )
 
@@ -2910,7 +2910,7 @@ func (srv *Server) ServeTLS(l net.Listener, certFile, keyFile string) error {
 		config.NextProtos = append(config.NextProtos, "http/1.1")
 	}
 
-	configHasCert := len(config.Certificates) > 0 || config.GetCertificate != nil
+	configHasCert := len(config.Certificates) > 0
 	if !configHasCert || certFile != "" || keyFile != "" {
 		var err error
 		config.Certificates = make([]tls.Certificate, 1)

@@ -15,7 +15,6 @@ import (
 	"compress/gzip"
 	"context"
 	"crypto/rand"
-	"crypto/tls"
 	"crypto/x509"
 	"encoding/binary"
 	"errors"
@@ -40,6 +39,7 @@ import (
 	"github.com/hieunmce/http-dev/httptest"
 	"github.com/hieunmce/http-dev/httptrace"
 	"github.com/hieunmce/http-dev/httputil"
+	tls "github.com/hieunmce/tls-dev"
 
 	"github.com/hieunmce/http-dev/internal"
 	"github.com/hieunmce/http-dev/internal/nettrace"

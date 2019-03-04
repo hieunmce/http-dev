@@ -9,17 +9,18 @@ package cgi
 
 import (
 	"bufio"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
 	"net"
-	http "github.com/hieunmce/http-dev"
 	"net/url"
 	"os"
 	"strconv"
 	"strings"
+
+	http "github.com/hieunmce/http-dev"
+	tls "github.com/hieunmce/tls-dev"
 )
 
 // Request returns the HTTP request as represented in the current

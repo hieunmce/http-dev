@@ -22,7 +22,6 @@ import (
 	"compress/gzip"
 	"context"
 	"crypto/rand"
-	"crypto/tls"
 	"encoding/binary"
 	"errors"
 	"fmt"
@@ -32,7 +31,6 @@ import (
 	"math"
 	mathrand "math/rand"
 	"net"
-	"github.com/hieunmce/http-dev/httptrace"
 	"net/textproto"
 	"net/url"
 	"os"
@@ -43,6 +41,9 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/hieunmce/http-dev/httptrace"
+	tls "github.com/hieunmce/tls-dev"
 
 	"golang.org/x/net/http/httpguts"
 	"golang.org/x/net/http2/hpack"

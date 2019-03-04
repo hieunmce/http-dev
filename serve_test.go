@@ -11,7 +11,6 @@ import (
 	"bytes"
 	"compress/gzip"
 	"context"
-	"crypto/tls"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -34,6 +33,8 @@ import (
 	"syscall"
 	"testing"
 	"time"
+
+	tls "github.com/hieunmce/tls-dev"
 
 	. "github.com/hieunmce/http-dev"
 	"github.com/hieunmce/http-dev/httptest"
@@ -1630,82 +1631,6 @@ func TestAutomaticHTTP2_Serve_WithTLSConfig(t *testing.T) {
 	on := s.TLSNextProto["h2"] != nil
 	if !on {
 		t.Errorf("http2 wasn't automatically enabled")
-	}
-}
-
-func TestAutomaticHTTP2_ListenAndServe(t *testing.T) {
-	cert, err := tls.X509KeyPair(internal.LocalhostCert, internal.LocalhostKey)
-	if err != nil {
-		t.Fatal(err)
-	}
-	testAutomaticHTTP2_ListenAndServe(t, &tls.Config{
-		Certificates: []tls.Certificate{cert},
-	})
-}
-
-func TestAutomaticHTTP2_ListenAndServe_GetCertificate(t *testing.T) {
-	cert, err := tls.X509KeyPair(internal.LocalhostCert, internal.LocalhostKey)
-	if err != nil {
-		t.Fatal(err)
-	}
-	testAutomaticHTTP2_ListenAndServe(t, &tls.Config{
-		GetCertificate: func(clientHello *tls.ClientHelloInfo) (*tls.Certificate, error) {
-			return &cert, nil
-		},
-	})
-}
-
-func testAutomaticHTTP2_ListenAndServe(t *testing.T, tlsConf *tls.Config) {
-	// Not parallel: uses global test hooks.
-	defer afterTest(t)
-	defer SetTestHookServerServe(nil)
-	var ok bool
-	var s *Server
-	const maxTries = 5
-	var ln net.Listener
-Try:
-	for try := 0; try < maxTries; try++ {
-		ln = newLocalListener(t)
-		addr := ln.Addr().String()
-		ln.Close()
-		t.Logf("Got %v", addr)
-		lnc := make(chan net.Listener, 1)
-		SetTestHookServerServe(func(s *Server, ln net.Listener) {
-			lnc <- ln
-		})
-		s = &Server{
-			Addr:      addr,
-			TLSConfig: tlsConf,
-		}
-		errc := make(chan error, 1)
-		go func() { errc <- s.ListenAndServeTLS("", "") }()
-		select {
-		case err := <-errc:
-			t.Logf("On try #%v: %v", try+1, err)
-			continue
-		case ln = <-lnc:
-			ok = true
-			t.Logf("Listening on %v", ln.Addr().String())
-			break Try
-		}
-	}
-	if !ok {
-		t.Fatalf("Failed to start up after %d tries", maxTries)
-	}
-	defer ln.Close()
-	c, err := tls.Dial("tcp", ln.Addr().String(), &tls.Config{
-		InsecureSkipVerify: true,
-		NextProtos:         []string{"h2", "http/1.1"},
-	})
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer c.Close()
-	if got, want := c.ConnectionState().NegotiatedProtocol, "h2"; got != want {
-		t.Errorf("NegotiatedProtocol = %q; want %q", got, want)
-	}
-	if got, want := c.ConnectionState().NegotiatedProtocolIsMutual, true; got != want {
-		t.Errorf("NegotiatedProtocolIsMutual = %v; want %v", got, want)
 	}
 }
 

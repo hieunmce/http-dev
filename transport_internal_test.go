@@ -8,13 +8,14 @@ package http
 
 import (
 	"bytes"
-	"crypto/tls"
 	"errors"
 	"io"
 	"io/ioutil"
 	"net"
 	"strings"
 	"testing"
+
+	tls "github.com/hieunmce/tls-dev"
 
 	"github.com/hieunmce/http-dev/internal"
 )

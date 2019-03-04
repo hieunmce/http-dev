@@ -7,7 +7,6 @@ package http_test
 import (
 	"bufio"
 	"bytes"
-	"crypto/tls"
 	"crypto/x509"
 	"fmt"
 	"io"
@@ -17,6 +16,7 @@ import (
 
 	. "github.com/hieunmce/http-dev"
 	"github.com/hieunmce/http-dev/httptest"
+	tls "github.com/hieunmce/tls-dev"
 )
 
 func TestNextProtoUpgrade(t *testing.T) {

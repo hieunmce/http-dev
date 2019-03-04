@@ -7,18 +7,19 @@
 package httptest
 
 import (
-	"crypto/tls"
 	"crypto/x509"
 	"flag"
 	"fmt"
 	"log"
 	"net"
-	http "github.com/hieunmce/http-dev"
-	"github.com/hieunmce/http-dev/internal"
 	"os"
 	"strings"
 	"sync"
 	"time"
+
+	http "github.com/hieunmce/http-dev"
+	"github.com/hieunmce/http-dev/internal"
+	tls "github.com/hieunmce/tls-dev"
 )
 
 // A Server is an HTTP server listening on a system-chosen port on the

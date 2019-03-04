@@ -8,11 +8,12 @@ package httptrace
 
 import (
 	"context"
-	"crypto/tls"
 	"net"
 	"net/textproto"
 	"reflect"
 	"time"
+
+	tls "github.com/hieunmce/tls-dev"
 
 	"github.com/hieunmce/http-dev/internal/nettrace"
 )

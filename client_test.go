@@ -9,7 +9,6 @@ package http_test
 import (
 	"bytes"
 	"context"
-	"crypto/tls"
 	"encoding/base64"
 	"errors"
 	"fmt"
@@ -25,6 +24,8 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	tls "github.com/hieunmce/tls-dev"
 
 	. "github.com/hieunmce/http-dev"
 	"github.com/hieunmce/http-dev/cookiejar"

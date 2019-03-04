@@ -11,7 +11,6 @@ import (
 	"compress/gzip"
 	"crypto/rand"
 	"crypto/sha1"
-	"crypto/tls"
 	"fmt"
 	"hash"
 	"io"
@@ -28,6 +27,8 @@ import (
 	"sync/atomic"
 	"testing"
 	"time"
+
+	tls "github.com/hieunmce/tls-dev"
 
 	. "github.com/hieunmce/http-dev"
 	"github.com/hieunmce/http-dev/httptest"

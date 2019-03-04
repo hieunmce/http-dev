@@ -10,7 +10,6 @@
 package http
 
 import (
-	"crypto/tls"
 	"encoding/base64"
 	"errors"
 	"fmt"
@@ -22,6 +21,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	tls "github.com/hieunmce/tls-dev"
 )
 
 // A Client is an HTTP client. Its zero value (DefaultClient) is a
